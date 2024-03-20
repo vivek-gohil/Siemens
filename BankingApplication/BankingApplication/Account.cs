@@ -12,6 +12,19 @@ namespace BankingApplication
         private string name;
         private double balance;
 
+        public Account() {
+            Console.WriteLine("Default constructor of Account");
+        }
+
+        public Account(int accountNumber, string name, double balance)
+        {
+            Console.WriteLine("Overloaded constructor of Account");
+            AccountNumber = accountNumber;
+            Name = name;
+            Balance = balance;
+        }
+
+
         public int AccountNumber {  
             get { return accountNumber; }
             set { accountNumber = value; }
@@ -52,6 +65,11 @@ namespace BankingApplication
             {
                 return false;
             }
+        }
+
+        public override string ToString()
+        {
+            return "accountNumber = " + accountNumber + " name = " + name + " balance = " + balance;
         }
 
     }
